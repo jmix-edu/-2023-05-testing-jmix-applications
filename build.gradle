@@ -1,6 +1,7 @@
 plugins {
     id 'io.jmix' version '1.5.1'
     id 'java'
+    id 'groovy'
 }
 
 apply plugin: 'org.springframework.boot'
@@ -40,6 +41,29 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+
+    testImplementation 'org.testcontainers:postgresql:1.17.6'
+    testRuntimeOnly 'org.postgresql:postgresql:42.5.1'
+
+    testImplementation 'io.jmix.ui:jmix-ui-test-assist'
+    testImplementation 'io.jmix.ui:jmix-ui-test-assist-spock'
+
+    implementation('org.jsoup:jsoup') {
+        version {
+            strictly '1.11.2'
+        }
+    }
+    testImplementation 'com.codeborne:selenide:6.12.4'
+    testImplementation 'io.jmix.masquerade:jmix-masquerade:1.2.0'
+
+    testImplementation 'org.testcontainers:selenium:1.17.6'
+    testImplementation 'org.testcontainers:junit-jupiter:1.17.6'
+
+    implementation 'io.jmix.rest:jmix-rest-starter'
+    implementation 'io.jmix.security:jmix-security-oauth2-starter'
+
+    // gauge
+    testImplementation 'com.thoughtworks.gauge:gauge-java:0.9.1'
 }
 
 test {

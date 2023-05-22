@@ -1,0 +1,5 @@
+<services xmlns="http://jmix.io/schema/rest/services">
+    <service name="jmixpm_TaskService">
+        <method name="findLeastBusyUser"/>
+    </service>
+</services>

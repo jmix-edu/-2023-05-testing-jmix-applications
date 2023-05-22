@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import static java.util.Comparator.*;
 
-@Service
+@Service("jmixpm_TaskService")
 public class TaskService {
 
     @Autowired
